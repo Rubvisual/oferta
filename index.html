@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Revista de Ofertas</title>
+
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+
+<body>
+
+<header class="header">
+
+<div class="header-inner">
+
+<img class="logo" src="logo-coto.png">
+
+<nav class="menu">
+
+<a>OFERTAS</a>
+<a>CATÁLOGOS</a>
+<a>DESCUENTOS</a>
+<a>SUCURSALES</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<main class="main">
+
+<h1 class="titulo">Revista de Ofertas Semanales de COTO</h1>
+
+
+
+<section class="catalogos" id="catalogos">
+
+<div class="catalogo" onclick="abrirCatalogo(1)">
+<img src="IMG/PORTADAS/ALMACEN.jpg">
+<div class="overlay">Ver catálogo</div>
+</div>
+
+<div class="catalogo" onclick="abrirCatalogo(2)">
+<img src="IMG/PORTADAS/CARNES.jpg">
+<div class="overlay">Ver catálogo</div>
+</div>
+
+<div class="catalogo" onclick="abrirCatalogo(3)">
+<img src="IMG/PORTADAS/BAZAR.jpg">
+<div class="overlay">Ver catálogo</div>
+</div>
+
+<div class="catalogo" onclick="abrirCatalogo(4)">
+<img src="IMG/PORTADAS/PERFUMERIA.jpg">
+<div class="overlay">Ver catálogo</div>
+</div>
+
+</section>
+
+
+
+<!-- REVISTA -->
+
+<section class="revista" id="revista">
+
+<button class="volver" onclick="volver()">← Volver</button>
+
+
+<!-- CATALOGO 1 -->
+
+<div class="paginas catalogo-contenido" id="catalogo1">
+
+<img src="IMG/ALMACEN/3.jpg" loading="lazy">
+<img src="IMG/ALMACEN/4.jpg" loading="lazy">
+<img src="IMG/ALMACEN/5.jpg" loading="lazy">
+<img src="IMG/ALMACEN/6.jpg" loading="lazy">
+<img src="IMG/ALMACEN/7.jpg" loading="lazy">
+
+
+</div>
+
+
+<!-- CATALOGO 2 -->
+
+<div class="paginas catalogo-contenido" id="catalogo2">
+
+<img src="IMG/CARNES/3.jpg" loading="lazy">
+<img src="IMG/CARNES/4.jpg"loading="lazy">
+<img src="IMG/CARNES/5.jpg"loading="lazy">
+<img src="IMG/CARNES/6.jpg"loading="lazy">
+<img src="IMG/CARNES/7.jpg"loading="lazy">
+<img src="IMG/CARNES/8.jpg"loading="lazy">
+<img src="IMG/CARNES/9.jpg"loading="lazy">
+<img src="IMG/CARNES/10.jpg"loading="lazy">
+
+
+</div>
+
+
+
+<!-- CATALOGO 3 -->
+
+<div class="paginas catalogo-contenido" id="catalogo3">
+
+<img src="IMG/HOGAR/1.jpg" loading="lazy">
+<img src="IMG/HOGAR/2.jpg" loading="lazy">
+
+
+</div>
+
+
+<!-- CATALOGO 4 -->
+
+<div class="paginas catalogo-contenido" id="catalogo4">
+
+<img src="IMG/PERFUMERIA/1.jpg" loading="lazy">
+<img src="IMG/PERFUMERIA/2.jpg" loading="lazy">
+<img src="IMG/PERFUMERIA/3.jpg" loading="lazy">
+<img src="IMG/PERFUMERIA/4.jpg" loading="lazy">
+<img src="IMG/PERFUMERIA/5.jpg" loading="lazy">
+</div>
+
+
+</section>
+
+
+</main>
+
+<script>
+    function abrirCatalogo(numero){
+
+document.getElementById("catalogos").classList.add("oculto")
+document.getElementById("revista").classList.add("visible")
+
+// ocultar todos los catalogos
+
+document.querySelectorAll(".catalogo-contenido").forEach(c => {
+c.style.display = "none"
+})
+
+// mostrar el elegido
+
+document.getElementById("catalogo"+numero).style.display = "block"
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+})
+
+}
+
+
+
+function volver(){
+
+document.getElementById("revista").classList.remove("visible")
+document.getElementById("catalogos").classList.remove("oculto")
+
+document.querySelectorAll(".catalogo-contenido").forEach(c => {
+c.style.display = "none"
+})
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+})
+
+}
+
+</script>
+
+
+
+
+</body>
+</html>
